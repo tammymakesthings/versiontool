@@ -1,0 +1,23 @@
+repos:
+    - repo: https://github.com/vincentjames501/pre-commit-clojure
+      rev: v1.x
+      hooks:
+          - id: clj-kondo
+          - id: zprint
+          - it: kaocha
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v2.3.0
+      hooks:
+          - id: check-yaml
+          - id: end-of-file-fixer
+          - id: trailing-whitespace
+            args: ["--markdown-linebreak-ext=md"]
+          - id: check-case-conflict
+          - id: check-json
+          - id: check-merge-conflict
+          - id: check-toml
+          - id: fix-byte-order-marker
+          - id: mixed-line-ending
+            args: ["--fix=lf"]
+          - id: pretty-format-json
+            args: ["--autofix", "--indent=4"]
